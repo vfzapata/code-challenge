@@ -1,36 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>CSS Template</title<title>Note App</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <meta charset="utf-8" src="logic.js">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div class="header">
-            <div class="header-main-title">
-                <h2>Code Challenge</h2>
-            </div>
-            <div class="header-secondary-title">
-                <h3>Note-Taking App</h3>
+
+<head>
+    <title>Note App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="logic.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h2>Note-Taking App</h2>
+        <span>Code Challenge</span>
+    </div>
+    <div class="container">
+        <div class="left-column">
+            <div class="nav">
+                <ul>
+                    <li> <a onclick="openModal(this.id)" id="addNoteId"> ADD NOTE </a> </li>
+                    <li>EDIT NOTE</li>
+                    <li>DELETE NOTE</li>
+                    <li> <select class="choose-colors">
+                            <option>CHOOSE A COLOR</option>
+                            <option value="#E4425D">RED</option>
+                            <option value="#E89E13">ORANGE</option>
+                            <option value="#ECF22F">YELLOW</option>
+                            <option value="#2FC0F2">BLUE</option>
+                            <option value="#F389F0">PURPLE</option>
+                        </select>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="row">
-            <div class="column" style="background-color:#aaa;">
-                <div class="nav">
-                    <ul>
-                        <li>ADD NOTE</li>
-                        <li>EDIT NOTE</li>
-                        <li>DELETE NOTE</li>
-                    </ul>
-                </div>
+        <div class="right-column">
+            <h3 id="mainTitle">
+                Not results...
+            </h3>
+            <div class="main-note">
             </div>
-            <div class="column" style="background-color:#bbb;">Column</div>
+        </div>
+    </div>
+
+    <div class="note-list"></div>
+
+    <div class="footer">
+        <p>Victor Fabian Zapata - Software Developer <br> 2020 </p>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close" onclick="closeModal()">&times;</span>
+            <form class="frm" action="#">
+                <label class="frm-title">Title</label>
+                <p> <input type="text" id="title" placeholder="Title"> </p>
+                <label class="frm-title">Description</label>
+                <p><textarea type="text" id="description" placeholder="Description"></textarea></p>
+                <label class="frm-title">Choose a color</label>
+                <p><select id="color" class="frm-color">
+                        <option value="#808B96">Select one option</option>
+                        <option value="#E4425D">RED</option>
+                        <option value="#E89E13">ORANGE</option>
+                        <option value="#ECF22F">YELLOW</option>
+                        <option value="#2FC0F2">BLUE</option>
+                        <option value="#F389F0">PURPLE</option>
+                    </select>
+                </p>
+                <button id="btn" type="submit" class="btn" onclick="addNote(document.getElementById('title').value,
+                        document.getElementById('description').value,
+                        document.getElementById('color').value)"> OK </button>
+            </form>
         </div>
 
-        <div class="footer">
-            <p>Footer</p>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
