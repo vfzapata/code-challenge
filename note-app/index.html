@@ -29,18 +29,22 @@
             <div class="nav">
                 <ul>
                     <li> <a onclick="openModal(this.id)" id="addNoteId"> ADD NOTE </a> </li>
-                    <li>EDIT NOTE</li>
-                    <li>DELETE NOTE</li>
-                    <li> <select class="choose-colors">
-                            <option>CHOOSE A COLOR</option>
-                            <option value="#E4425D">RED</option>
-                            <option value="#E89E13">ORANGE</option>
-                            <option value="#ECF22F">YELLOW</option>
-                            <option value="#2FC0F2">BLUE</option>
-                            <option value="#F389F0">PURPLE</option>
-                        </select>
-                    </li>
+                    <li> <a onclick="openModal(this.id)" id="editNoteId">EDIT NOTE</a></li>
                 </ul>
+                <p class="color-list">
+                    <span> CHOOSE A COLOR </span>
+                    <div class="color-list-opt"> <input type="radio" name="clrs" id="red" value="#DC3545"
+                            onclick="chooseColorNote(this.value)"> <label for="red">RED</label></div>
+                    <div class="color-list-opt"> <input type="radio" name="clrs" id="orange" value="#E89E13"
+                            onclick="chooseColorNote(this.value)"> <label for="orange">ORANGE</label></div>
+                    <div class="color-list-opt"> <input type="radio" name="clrs" id="yellow" value="#FFC107"
+                            onclick="chooseColorNote(this.value)"> <label for="yellow">YELLOW</label></div>
+                    <div class="color-list-opt"> <input type="radio" name="clrs" id="blue" value="#007BFF"
+                            onclick="chooseColorNote(this.value)"> <label for="blue">BLUE</label>
+                    </div>
+                    <div class="color-list-opt"> <input type="radio" name="clrs" id="purple" value="#F389F0"
+                            onclick="chooseColorNote(this.value)"> <label for="purple">PURPLE</label></div>
+                </p>
             </div>
         </div>
         <div class="right-column">
@@ -68,16 +72,18 @@
                 <label class="frm-title">Choose a color</label>
                 <p><select id="color" class="frm-color">
                         <option value="#808B96">Select one option</option>
-                        <option value="#E4425D">RED</option>
+                        <option value="#DC3545">RED</option>
                         <option value="#E89E13">ORANGE</option>
-                        <option value="#ECF22F">YELLOW</option>
-                        <option value="#2FC0F2">BLUE</option>
+                        <option value="#FFC107">YELLOW</option>
+                        <option value="#007BFF">BLUE</option>
                         <option value="#F389F0">PURPLE</option>
                     </select>
                 </p>
+                <span class="alert-danger"> Title and Description are required </span>
                 <button id="btn" type="submit" class="btn" onclick="addNote(document.getElementById('title').value,
                         document.getElementById('description').value,
                         document.getElementById('color').value)"> OK </button>
+                <button id="btnEdit" type="submit" class="btn"> EDIT </button>
             </form>
         </div>
 

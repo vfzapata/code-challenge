@@ -27,6 +27,8 @@ body {
 .container {
     max-width: 1280px;
     margin: 0 auto;
+    display: flex;
+    box-shadow: 5px 5px 10px #888888;
 }
 
 .left-column {
@@ -45,13 +47,44 @@ body {
 .nav > ul > li {
     list-style: none;
     height: 40px;
+    padding-left: 10px;
+    width: 60%;
+}
+
+.nav > ul > li:hover {
+    background-color: rgb(59, 158, 1);
+    border: 2px solid rgb(50, 136, 1);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.nav > ul > li > a:hover, .nav > .color-list > ul > li {
     cursor: pointer;
 }
 
 .nav > ul {
+    margin-bottom: 10px;
     padding-left: 10px;
 }
 
+.color-list {
+    border-top: 1px solid #ffffff;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.color-list-opt {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.color-list-opt input, .color-list-opt label {
+    cursor: pointer;
+}
 .nav > ul > li {
     line-height: 40px;
 }
@@ -73,6 +106,7 @@ body {
 }
 
 .main-note {
+    color: #2C3E50;
     padding: 10px;
     border-radius: 10px;
 }
@@ -83,14 +117,32 @@ body {
 }
 
 .note-list {
-    margin-top: 20px;
+    margin: 20px auto;
     max-width: 1280px;
+    color: #2C3E50;
 }
 
 .all-notes {
     float: left;
-    width: 33.33%;
+    width: 33.1%;
+    margin-top: 2px;
     padding: 10px;
+    border-radius: 4px;
+}
+
+.all-notes span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.remove-note {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.all-notes p {
+    padding-top: 20px;
 }
 
 /* Style footer */
@@ -170,6 +222,21 @@ body {
     font-weight: 700;
     height: 50px;
     border-radius: 10px;
+}
+
+#btnEdit {
+    display: none;
+}
+
+.alert-danger {
+    margin-top: 10px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    display: none;
 }
 
 /* Responsive layout */
