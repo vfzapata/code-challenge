@@ -1,23 +1,34 @@
+.main-content, .secondary-content {
+  height: 100px;
+}
+
+.main-content {
+  
+}
+.secondary-content {
+  
+}
+
 .tool-tip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    border-bottom: 1px dotted #17202A;
 }
 
 .tool-tip .tool-tip-content {
-  /* visibility: hidden; */
+  visibility: hidden;
   width: 200px;
   max-width: 300px;
-  background-color: black;
+  background-color: #17202A;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
   position: absolute;
-  /* z-index: 1;
+  z-index: 1;
   bottom: 150%;
   left: 50%;
-  margin-left: -60px; */
+  margin-left: -60px;
 }
 
 .tool-tip .tool-tip-content::after {
@@ -28,5 +39,16 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent;
+    border-color: #17202A transparent transparent transparent;
+}
+
+
+button {
+  font-weight: 700;
+  background-color: #D5D8DC;
+  height: 30px;
+  width: 100px;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
