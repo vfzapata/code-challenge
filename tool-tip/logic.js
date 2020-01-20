@@ -1,12 +1,17 @@
-/*
-preferred position: top
-bottom,left or right if there not enough space at the top
-
-*/
-$('#HTML element').showToolTip({
-    Title: 'This is the title',
-    Content: 'This is the content',
-    onApprove: function () {
-        // To be called after Okay button is clicked.
+showToolTip = () => {
+    let tooltip = {
+        Title: 'This is the title',
+        Content: 'This is the content',
+        onApprove: function () {
+            $('#close').click(function () {
+                $('.tooltip, .tooltiptext').css('visibility', 'hidden');
+            });
+        }
     }
+    $('.tooltip:first-child').append(`<span class="tooltiptext">${tooltip.Title} <br> ${tooltip.Content} <button id="close" onclick='${tooltip.onApprove()}'>OK</button></span>`);
+
+};
+
+$('.tooltiptext').mouseover(function () {
+    showToolTip();
 });
