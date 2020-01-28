@@ -8,10 +8,10 @@ showToolTip = () => {
             });
         }
     }
-    $('.tooltip:first-child').append(`<span class="tooltiptext">${tooltip.Title} <br> ${tooltip.Content} <button id="close" onclick='${tooltip.onApprove()}'>OK</button></span>`);
+    $('.tooltip').append(`<span class="tooltiptext">${tooltip.Title} <br> ${tooltip.Content} <button id="close" onclick='${tooltip.onApprove()}'>OK</button></span>`);
 
 };
 
-$('.tooltiptext').mouseover(function () {
+$('.tooltip.span').hover(function () {
     showToolTip();
 });
